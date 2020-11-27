@@ -18,19 +18,25 @@
             --border-color:#999;
             --border-color-hover:#666;
         }
-        #app{margin: 20px;}
+        #app{margin: 20px;display: inline-flex;}
         body{font-size: var(--font-size);}
     </style>
     <style>
-       
+       .icon{
+           width: 1em;height: 1em;
+       }
+       .g-button{margin: 0 5px;}
     </style>
 </head>
 <body>
     <div id="app">
-        <g-button></g-button>
+        <g-button>按钮</g-button>
+        <g-button icon="setting">按钮</g-button>
+    
+        <g-button icon="setting" icon-position="right">按钮</g-button>
     </div>
 
-<script src="./src/app.js">
-</script>
+<script src="./src/app.js"></script>
+<script src="//at.alicdn.com/t/font_2230926_gxjcb2vni2b.js"></script>
 </body>
 </html>
