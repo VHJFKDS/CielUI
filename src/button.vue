@@ -14,7 +14,23 @@
 
 <script>
 export default{
-  props:['icon','iconPosition']
+//   props:['icon','iconPosition']
+  props:{
+      icon:{},
+      iconPosition:{
+          type:String,
+          default:'left',
+          validator(value){  //属性检查器：这里会获取用户写的值
+        //    if(value !== 'left' && value !== 'right'){
+        //        return false
+        //    }else{
+        //        return true
+        //    }
+            //  return !(value !== 'left' && value !== 'right')
+            return value === 'left' || value === 'right'
+          }
+      }
+  }
 }
 </script>
 <style lang="scss" scoped>
