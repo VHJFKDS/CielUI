@@ -3,6 +3,8 @@
 <button class="g-button" :class="{[`icon-${iconPosition}`]:true}">
     
     <g-icon class="icon" :name="icon" v-if="icon"></g-icon>
+    <g-icon class="loading" name="loading" ></g-icon>
+
     <div class="content">
         <slot></slot>
     </div>
@@ -20,12 +22,6 @@ export default{
           type:String,
           default:'left',
           validator(value){  //属性检查器：这里会获取用户写的值
-        //    if(value !== 'left' && value !== 'right'){
-        //        return false
-        //    }else{
-        //        return true
-        //    }
-            //  return !(value !== 'left' && value !== 'right')
             return value === 'left' || value === 'right'
           }
       }
@@ -59,5 +55,13 @@ export default{
             >.content{order: 1;}
             >.icon{order: 2;margin-left: .1em;margin-right: 0;}
         }
+        .loading{
+           animation: spin 1s infinite linear;
+        }
+ }
+ 
+ @keyframes spin{
+     0%{transform: rotate(0deg);}
+     100%{transform: rotate(360deg);}
  }
 </style>
